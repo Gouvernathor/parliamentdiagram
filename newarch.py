@@ -287,7 +287,7 @@ def write_svg_header(out_file):
 def write_svg_number_of_seats(out_file, nb_seats):
     # Print the number of seats in the middle at the bottom.
     out_file.write(
-        '        <text x="175" y="175" \n'
+        '        <text x="180" y="180" \n'
         '              style="font-size:36px;font-weight:bold;text-align:center;text-anchor:middle;font-family:sans-serif">\n'
         '            {}\n'
         '        </text>\n'
@@ -326,7 +326,7 @@ def write_svg_seats(out_file, party_list, positions_list, radius):
                 party_border_color,
                 block_id))
         out_file.write(  # Party name in a tooltip
-            '            <title>{}</title>'.format(party_name))
+            '            <title>{}</title>'.format(party_name.encode('utf-8')))
 
         for j in range(drawn_spots, drawn_spots + party_nb_seats):
             x = 5.0 + 175 * positions_list[j][1]
