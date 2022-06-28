@@ -2,7 +2,7 @@
 
 The Parliament diagram creator is made for use in Wikipedia, supported by Wikimedia Commons and Wikidata.
 
-![Sample image](https://parliamentdiagram.toolforge.org/images/CumhuriyetMeclisiDagilim.svg)
+![Sample image](images/CumhuriyetMeclisiDagilim.svg)
 
 You can use the tool at http://parliamentdiagram.toolforge.org/parlitest.php
 
