@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-<head>
-<link rel="stylesheet" type="text/css" href="css/parliamentstyle.css">
-<script src='https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.2.1/jquery.min.js' type='text/javascript'></script>
-<!--
-//document.write("\<script src='jquery.min.js' type='text/javascript'>\<\/script>"); //For local debugging
--->
-<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<?php require('header.php'); ?>
+
 <script type='text/javascript'>
 $(document).ready(function() {
 	jscolor.installByClassName("jscolor");
@@ -246,11 +239,7 @@ function deleteParty(i){
   partylistcontainer.removeChild(delparty);
 }
 </script>
-</head>
-<body>
-<div class=block id=header>
-  <script type='text/javascript'>$( "#header" ).load( "header.html" )</script>
-</div>
+
 <div class=block>
   <div class="notice">This tool is in Beta testing. Please help to test it, but if you use it to generate diagrams for Wikipedia, please make sure that you confirm with other editors what the consensus is on which layout and settings to use.</div><br>
   This is a tool to generate Westminster-style parliament diagrams, with a house composed of a left bench, a right bench, a cross-bench group and a "head" - for example Speaker of Parliament.<br>
@@ -321,5 +310,5 @@ function deleteParty(i){
     <br>
   </div>
 </div>
-</body>
-</html>
+
+<?php require('footer.php'); ?>
