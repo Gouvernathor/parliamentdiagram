@@ -280,7 +280,7 @@ def write_svg_seats(out_file, party_list, positions_list, radius):
                 party_border_color,
                 block_id))
         out_file.write(  # Party name in a tooltip
-            '            <title>{}</title>'.format(party_name.encode('utf-8')))
+            '            <title>{}</title>\n'.format(party_name.encode('utf-8')))
 
         for j in range(drawn_spots, drawn_spots + party_nb_seats):
             x = 5.0 + 175 * positions_list[j][1]
