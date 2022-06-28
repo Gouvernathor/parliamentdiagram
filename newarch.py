@@ -56,7 +56,7 @@ def log(message, newline=True):
     LOGFILE.write("{}{}".format(message, '\n' if newline else ''))
 
 
-def treat_inputlist(start_time, request_hash, *, parties=(), denser_rows=False, **kwargs):
+def treat_inputlist(start_time, request_hash, parties=(), denser_rows=False, **kwargs):
     """
     Generate a new SVG file and return its name.
 
