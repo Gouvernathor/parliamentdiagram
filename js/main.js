@@ -436,7 +436,7 @@ function makeUploadLink(inputname, linkdata, legendtext){
 
 	today = YYYY+'-'+MM+'-'+DD;
 	//Now build the query URL that will be used to upload the image to Commons:
-	a.href = document.URL.replace(/\?.*$/,'') + "?action=upload&uri=/data/project/parliamentdiagram/public_html/" + linkdata + "&filename=" + fname + "&pagecontent=" + encodeURIComponent( "== {{int:filedesc}} ==\n{{Information\n|description = " + legendtext + "\n|date = " + today + "\n|source = [https://parliamentdiagram.toolforge.org/parliamentinputform.html Parliament diagram tool]\n|author = [[User:{{subst:REVISIONUSER}}]]\n|permission = {{PD-shape}}\n|other versions =\n}}\n\n[[Category:Election apportionment diagrams]]\n");
+	a.href = document.URL.replace(/\?.*$/,'') + "?action=upload&uri=/data/project/parliamentarch/public_html/" + linkdata + "&filename=" + fname + "&pagecontent=" + encodeURIComponent( "== {{int:filedesc}} ==\n{{Information\n|description = " + legendtext + "\n|date = " + today + "\n|source = [https://parliamentarch.toolforge.org/parliamentinputform.html Parliament diagram tool]\n|author = [[User:{{subst:REVISIONUSER}}]]\n|permission = {{PD-shape}}\n|other versions =\n}}\n\n[[Category:Election apportionment diagrams]]\n");
 	a.setAttribute('target', '_blank');
 	buttonlocation=document.getElementById("postcontainerbutton");
 	buttonlocation.innerHtml="";
