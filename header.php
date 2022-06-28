@@ -33,10 +33,10 @@
 
         <div class="card">
           <div class="card-body">
-            <a href="USinputform.html">
+            <a href="USinputform.php">
               <img class="mt-5" src="images/Senate_diagram_2014_State_of_Utah.svg" alt="USA diagram tool" title="USA diagram tool" width="90%">
             </a>
-            <p class="card-text text-center pt-3"><a href="USinputform.html">US-style diagram</a></p>
+            <p class="card-text text-center pt-3"><a href="USinputform.php">US-style diagram</a></p>
           </div>
         </div>
 
