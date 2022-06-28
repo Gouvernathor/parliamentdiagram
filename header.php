@@ -24,10 +24,10 @@
       <div class="block card-deck">
         <div class="card">
           <div class="card-body">
-            <a href="parlitest.php">
+            <a href="archinputform.php">
               <img class="mt-5" src="images/CumhuriyetMeclisiDagilim.svg" alt="arch diagram tool" title="arch diagram tool" width="90%">
             </a>
-            <p class="card-text text-center pt-3"><a href="parlitest.php">Arch-style diagram</a></p>
+            <p class="card-text text-center pt-3"><a href="archinputform.php">Arch-style diagram</a></p>
           </div>
         </div>
 
@@ -42,10 +42,10 @@
 
         <div class="card">
           <div class="card-body">
-            <a href="westminsterinputform.html">
+            <a href="westminsterinputform.php">
               <img class="mt-5" src="images/New_Zealand-01.svg" alt="Westminster-style diagram tool" title="Westminster-style diagram tool" width="90%">
             </a>
-            <p class="card-text text-center pt-3"><a href="westminsterinputform.html">Westminster-style diagram</a></p>
+            <p class="card-text text-center pt-3"><a href="westminsterinputform.php">Westminster-style diagram</a></p>
           </div>
         </div>
       </div>

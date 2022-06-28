@@ -4,7 +4,7 @@ The Parliament diagram creator is made for use in Wikipedia, supported by Wikime
 
 ![Sample image](images/CumhuriyetMeclisiDagilim.svg)
 
-You can use the tool at http://parliamentarch.toolforge.org/parlitest.php
+You can use the tool at http://parliamentarch.toolforge.org/archinputform.php
 
 ## Dependencies
 
