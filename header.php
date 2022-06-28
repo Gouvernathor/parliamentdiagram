@@ -25,7 +25,7 @@
         <div class="card">
           <div class="card-body">
             <a href="archinputform.php">
-              <img class="mt-5" src="images/CumhuriyetMeclisiDagilim.svg" alt="arch diagram tool" title="arch diagram tool" width="90%">
+              <img class="mt-5" src="images/AssNat_16_groupes_2022.svg" alt="arch diagram tool" title="arch diagram tool" width="90%">
             </a>
             <p class="card-text text-center pt-3"><a href="archinputform.php">Arch-style diagram</a></p>
           </div>
@@ -34,7 +34,7 @@
         <div class="card">
           <div class="card-body">
             <a href="USinputform.php">
-              <img class="mt-5" src="images/Senate_diagram_2014_State_of_Utah.svg" alt="USA diagram tool" title="USA diagram tool" width="90%">
+              <img class="mt-5" src="images/87th_Texas_Senate.svg" alt="USA diagram tool" title="USA diagram tool" width="90%">
             </a>
             <p class="card-text text-center pt-3"><a href="USinputform.php">US-style diagram</a></p>
           </div>
@@ -43,7 +43,7 @@
         <div class="card">
           <div class="card-body">
             <a href="westminsterinputform.php">
-              <img class="mt-5" src="images/New_Zealand-01.svg" alt="Westminster-style diagram tool" title="Westminster-style diagram tool" width="90%">
+              <img class="mt-5" src="images/NewZealand_House_Nov_2020.svg" alt="Westminster-style diagram tool" title="Westminster-style diagram tool" width="90%">
             </a>
             <p class="card-text text-center pt-3"><a href="westminsterinputform.php">Westminster-style diagram</a></p>
           </div>
