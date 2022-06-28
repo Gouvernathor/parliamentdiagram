@@ -20,7 +20,7 @@ function CallArchScript(){
 	let requestJSON={};  // This is what we send to the python script
         requestJSON.denser_rows = false; //Because I'm not going to implement this here yet
 	requestJSON.parties = []
-	$( "input" ).each( function() { 
+	$( "input" ).each( function() {
 		if(this.value < 1){this.value = 0;}; //Make sure it's a number!
 		switch(this.name){
 			case "Dem":
@@ -31,7 +31,7 @@ function CallArchScript(){
 				demJSON.border_size = 0;
 				demJSON.border_color = "#000000";
 				requestJSON.parties.push(demJSON)
-				break; 
+				break;
 			case "Rep":
 				let repJSON = {}
 				repJSON.name = "Republicans"

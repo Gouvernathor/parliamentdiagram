@@ -38,7 +38,7 @@ function CallDiagramScript(){
         var autospeaker ="0";
         var partylist   = new Array();
         var bigparty    = 1; //this variable will hold the index of the party with the biggest support: used for creating an auto-speaker spot.
-        $( "input" ).each( function() { 
+        $( "input" ).each( function() {
                 if(this.name.match( /^radius/ )){
                   spotradius=parseFloat(this.value);
                   if(spotradius<0){spotradius=0}
@@ -80,7 +80,7 @@ function CallDiagramScript(){
                   partylist[/[0-9]+$/.exec(this.name)[0]]['Color']=this.value;
                 }
         });
-        $( "select" ).each( function() { 
+        $( "select" ).each( function() {
                 if(this.name.match( /^Group/ )){
                   partylist[/[0-9]+$/.exec(this.name)[0]]['Group']=this.value;
                 }
@@ -95,7 +95,7 @@ function CallDiagramScript(){
         for (var i = 1; i < arrayLength; i++) {
           if(partylist[i]) {
                 //Find the biggest party while going through the list - this is
-                //such a cheap operation that I'm not going to bother to check 
+                //such a cheap operation that I'm not going to bother to check
                 //each time whether "autospeaker" is checked.
                 //
                 //if bigparty is pointing to a non-null member of the party list, check whether the current member has larger support, and if so point to it instead.
@@ -179,7 +179,7 @@ function addParty(){
         var partylistcontainer = document.getElementById("partylistcontainer");
         //New party's number: one more than the largest party number so far:
         i=0;
-        $( "div" ).each( function() { 
+        $( "div" ).each( function() {
             if(this.id.match( /^party[0-9]+$/ )){
                 i=Math.max(i, parseInt(/[0-9]+$/.exec(this.id)[0] ));
               }
