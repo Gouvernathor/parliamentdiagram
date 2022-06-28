@@ -10,7 +10,7 @@
 	<p><strong>Note: the colours of the parties generated from Wikidata are not correct! You need to correct them by hand!</strong></p>
 	<p>After filling in the parties with any of these methods, click "Make my diagram", and a link will appear to your SVG diagram. You can then freely download and use the diagram, but to use the diagram in Wikipedia, you should upload it to Wikimedia Commons. You can do this directly, by clicking on the green button to create an upload link. Click on the link and follow the instructions: it will upload the file under your username, including the list of parties in the file description. This tool will automatically add your file to the <a href="https://commons.wikimedia.org/wiki/Category:Election_apportionment_diagrams">election apportionment diagrams</a> category, but you should categorise it in more detail after uploading.</p>
 	<p>If the layout of the seats in the diagram is strange (this sometimes happens for small parliaments) you can click on "Enable advanced parameters" and try the "compact-rows diagram" option.</p>
-<p class="card-text">Please submit bug reports and feature requests at the project's <a href="https://github.com/slashme/parliamentdiagram/issues/new">issue tracker</a>.</p>
+<p class="card-text">Please submit bug reports and feature requests at the project's <a href="https://github.com/Gouvernathor/parliamentdiagram/issues/new">issue tracker</a>.</p>
       <?php require('response.php'); ?>
     </div>
   </div>

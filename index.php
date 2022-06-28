@@ -200,7 +200,7 @@ function doAuthorizationRedirect() {
 		header( "HTTP/1.1 $errorCode Internal Server Error" );
 		echo '<div class="error">';
 		echo 'Error retrieving token: ' . htmlspecialchars( $token->error ).'</br>';
-		echo 'Maybe everything is OK: Try <a href="http://parliamentdiagram.toolforge.org">this link.</a>';
+		echo 'Maybe everything is OK: Try <a href="index.php">this link.</a>';
 		echo '</div>';
 		exit(0);
 	}
@@ -270,7 +270,7 @@ function fetchAccessToken() {
 		header( "HTTP/1.1 $errorCode Internal Server Error" );
 		echo '<div class="error">';
 		echo 'Error retrieving token: ' . htmlspecialchars( $token->error ).'</br>';
-		echo 'Maybe everything is OK: Try <a href="http://parliamentdiagram.toolforge.org">this link.</a>';
+		echo 'Maybe everything is OK: Try <a href="index.php">this link.</a>';
 		echo '</div>';
 		exit(0);
 	}
@@ -431,7 +431,7 @@ function doIdentify() {
 	$err = json_decode( $data );
 	if ( is_object( $err ) && isset( $err->error ) && $err->error === 'mwoauthdatastore-access-token-not-found' ) {
 		// We're not authorized!
-		echo 'To start using the parliament diagram tool, go <a href="https://parliamentdiagram.toolforge.org/parlitest.php">here</a>.';
+		echo 'To start using the parliament diagram tool, go <a href="parlitest.php">here</a>.';
                 echo '<hr>';
 		echo 'You haven\'t authorized this application yet! Go <a href="' . htmlspecialchars( $_SERVER['SCRIPT_NAME'] ) . '?action=authorize">here</a> to do that.';
 		echo '<hr>';
@@ -481,7 +481,7 @@ function doIdentify() {
 	echo "<div class='success'>";
 	echo 'You have authorized the parliament diagram tool to post on behalf of ' . htmlspecialchars(  $payload->username ) . '. You can now close this window and click the upload link again.';
         echo '<hr>';
-        echo 'To start using the parliament diagram tool, go <a href="https://parliamentdiagram.toolforge.org/parlitest.php">here</a>.';
+        echo 'To start using the parliament diagram tool, go <a href="parlitest.php">here</a>.';
 	echo "</div>\n";
 }
 
