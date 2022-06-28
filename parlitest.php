@@ -1,5 +1,5 @@
 <?php require('auth.php'); ?>
-<?php require('top.php'); ?>
+<?php require('header.php'); ?>
 
   <div class="block card">
     <div class="card-body">
