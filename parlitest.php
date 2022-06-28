@@ -1,7 +1,5 @@
 <?php require('auth.php'); ?>
 <?php require('top.php'); ?>
-<div id="header">
-  <?php require('header.php'); ?>
 
   <div class="block card">
     <div class="card-body">
@@ -115,6 +113,4 @@
     </div>
   </div>
 
-</div> <!-- Closes div.container in header.html -->
-</div> <!-- Closes div#header -->
 <?php require('footer.php'); ?>

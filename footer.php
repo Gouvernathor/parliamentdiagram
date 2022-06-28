@@ -1,3 +1,6 @@
+</div> <!-- Closes div class=container in header.php -->
+</div> <!-- Closes div id=header in top.php -->
+
 <footer class="footer" role="contentinfo">
   <div class="container">
     <p>Built by

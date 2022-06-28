@@ -14,3 +14,5 @@
     <script type="text/javascript" src="js/main.js"></script>
   </head>
 <body>
+<div id="header">
+<?php require('header.php'); ?>
