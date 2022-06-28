@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-<head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<link rel="stylesheet" type="text/css" href="css/parliamentstyle.css">
-<script src='https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.2.1/jquery.min.js' type='text/javascript'></script>
-<!--
-//document.write("\<script src='jquery.min.js' type='text/javascript'>\<\/script>"); //For local debugging
--->
-<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<?php require('header.php'); ?>
+
 <script type='text/javascript'>
 function CallArchScript(){
 	// Create request string: this is the request that is passed to the python script.
@@ -95,11 +86,7 @@ function CallArchScript(){
 	});
 }
 </script>
-</head>
-<body>
-<div class=block id=header>
-  <script type='text/javascript'>$( "#header" ).load( "header.html" )</script>
-</div>
+
 <div class=block>
   This is a tool to generate arch-shaped diagrams of legislatures of Glorious Two-Party American System.<br>
   <br>
@@ -125,5 +112,5 @@ function CallArchScript(){
     <br>
   </div>
 </div>
-</body>
-</html>
+
+<?php require('footer.php'); ?>
