@@ -247,7 +247,7 @@ function deleteParty(i){
 <div class=block>
   To use this tool, fill in the name and support of each party in the legislature, clicking "add party" whenever you need to add a new party.
   Then click "Make my diagram", and a link will appear to your SVG diagram. You can then freely download and use the diagram.
-  To use the diagram in Wikipedia, I recommend uploading it to Wikimedia Commons.
+  To use it in Wikipedia, I recommend uploading it to Wikimedia Commons.
   If you do upload it, I recommend adding it to the <a href="https://commons.wikimedia.org/wiki/Category:Election_apportionment_diagrams">election apportionment diagrams</a> category.<br>
 </div>
 <div class=block>
