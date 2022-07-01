@@ -1,3 +1,4 @@
+<?php $title="US-style parliament diagram generator"; ?>
 <?php require('header.php'); ?>
 
 <script type='text/javascript'>

@@ -1,4 +1,5 @@
 <?php require('auth.php'); ?>
+<?php $title="Arch-style parliament diagram generator"; ?>
 <?php require('header.php'); ?>
 
   <div class="block card">

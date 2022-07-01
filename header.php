@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" type="text/css" href="css/parliamentstyle.css">
     <link rel="stylesheet" type="text/css" href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/select2.min.css" />
