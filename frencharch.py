@@ -59,6 +59,7 @@ def build_svg(**toggles):
 
     # the paths
     for name, path in paths.items():
+        # a seat
         if name.isdecimal():
             grp = number_to_group.get(int(name))
             if grp is None:
@@ -68,16 +69,21 @@ def build_svg(**toggles):
             else:
                 props = number_to_properties[int(name)]
                 cl = f"grp{groups.index(grp)}"
+        # a fixed element
         else:
             if not toggles.get(name, True):
                 continue
             if name == "bancsdevant":
                 name = "bancs"
             cl = name
+
+        # the svg path
         elem = ET.Element("path",
             {"class":cl},
             d=path,
         )
+
+        # the hover/tooltip/title
         if cl not in ("enceinte", "bancs", "perchoir"):
             title = ET.Element("title")
             if cl == "vacant":
@@ -89,6 +95,7 @@ def build_svg(**toggles):
             else:
                 title.text = title_from_properties(props)
             elem.append(title)
+
         svg.append(elem)
 
     # make it a bit more readable
@@ -264,6 +271,7 @@ def title_from_properties(props):
     if None in (civ, nom):
         return None
     rv = f"{civ} {nom}"
+
     dept = props["dept"]
     circo = props["circo"]
     if None in (dept, circo):
@@ -289,17 +297,6 @@ def get_group_to_numbers():
 
 def main():
     tree = ET.ElementTree(build_svg())
-
-    # # faudra choisir à un moment
-    # s = StringIO()
-    # tree.write(s, encoding="unicode", xml_declaration=True)
-    # print(s.getvalue())
-    # b = BytesIO()
-    # tree.write(b, encoding="utf-8", xml_declaration=True)
-    # print(b.getvalue())
-
-    # return s, b
-
     with open("./frencharch.svg", "wb") as f:
         tree.write(f, encoding="utf-8", xml_declaration=True)
 
