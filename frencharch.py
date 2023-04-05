@@ -35,7 +35,8 @@ def build_svg(**toggles):
 
     svg = ET.Element('svg',
         xmlns="http://www.w3.org/2000/svg",
-        width="900", height="600",
+        # width="900", height="600",
+        viewBox="0 0 850 475",
     )
 
     # vanity comment
