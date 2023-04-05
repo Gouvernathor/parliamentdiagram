@@ -66,6 +66,7 @@ def build_svg(**toggles):
                     continue
                 cl = "vacant"
             else:
+                props = number_to_properties[int(name)]
                 cl = f"grp{groups.index(grp)}"
         else:
             if not toggles.get(name, True):
@@ -73,10 +74,22 @@ def build_svg(**toggles):
             if name == "bancsdevant":
                 name = "bancs"
             cl = name
-        svg.append(ET.Element("path",
+        elem = ET.Element("path",
             {"class":cl},
             d=path,
-        ))
+        )
+        if cl not in ("enceinte", "bancs", "perchoir"):
+            title = ET.Element("title")
+            if cl == "vacant":
+                title.text = "Siège vacant"
+            elif cl == "ministres":
+                title.text = "Bancs des ministres"
+            elif cl == "commissions":
+                title.text = "Bancs des commissions"
+            else:
+                title.text = title_from_properties(props)
+            elem.append(title)
+        svg.append(elem)
 
     # make it a bit more readable
     svg.text = "\n"
@@ -212,7 +225,13 @@ def get_datadiv():
     datadiv = ET.fromstring(rawdata)
     return datadiv
 
-def get_number_to_group():
+number_to_group = {}
+number_to_properties = {}
+
+def generate_number_to_group(properties=True):
+    global number_to_group
+    global number_to_properties
+
     datadiv = get_datadiv()
     number_to_group = {}
     for dl in datadiv:
@@ -221,14 +240,33 @@ def get_number_to_group():
         number = int(place.removeprefix("s"))
 
         number_to_group[number] = group
-
-    return number_to_group
+        if properties:
+            number_to_properties[number] = dict(
+                civ=dl.get("data-civ"),
+                nom=dl.get("data-nom"),
+                id=dl.get("data-id"),
+                dept=dl.get("data-departement"),
+                circo=re.search(r"\(?(\d+)[\w\s]*\)?", dl.get("data-circo")).group(1),
+            )
 
 # only do that if some json file doesn't exist, or if requested ?
 try:
-    number_to_group = get_number_to_group()
+    generate_number_to_group()
 except Exception:
-    number_to_group = None
+    pass
+
+def title_from_properties(props):
+    civ = props["civ"]
+    nom = props["nom"]
+    if None in (civ, nom):
+        return None
+    rv = f"{civ} {nom}"
+    dept = props["dept"]
+    circo = props["circo"]
+    if None in (dept, circo):
+        return rv
+    rv += f"\n {circo}e circo. {dept}"
+    return rv
 
 # funny but unused
 def get_group_to_numbers():
