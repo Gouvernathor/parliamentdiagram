@@ -23,10 +23,14 @@ constant_styles = dict( # the original ones from assnat
     vacant="fill:#ddd;stroke:#fff;stroke-width,0.3;stroke-linejoin:round;",
 )
 
-def build_svg():
+def build_svg(**toggles):
     """
     Returns an svg xml node.
+    The kwargs toggle different parts being included or not.
+    They take the keys of constant_styles, and "vacant" for the vacant seats.
     """
+    toggles = dict(enceinte=False, perchoir=False, vacant=True) | toggles
+
     groups = sorted(set(number_to_group.values()))
 
     svg = ET.Element('svg',
@@ -57,10 +61,14 @@ def build_svg():
         if name.isdecimal():
             grp = number_to_group.get(int(name))
             if grp is None:
+                if not toggles["vacant"]:
+                    continue
                 cl = "vacant"
             else:
                 cl = f"grp{groups.index(grp)}"
         else:
+            if not toggles.get(name, True):
+                continue
             if name == "bancsdevant":
                 name = "bancs"
             cl = name
