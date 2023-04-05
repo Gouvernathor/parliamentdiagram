@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from io import StringIO, BytesIO
+# from io import StringIO, BytesIO
 import json
 import re
 from collections import defaultdict
@@ -149,17 +149,20 @@ def group_color(group_name, fallback=True):
 
 def create_json(f=None, write=True):
     """
-    Reads the hemi.js and from the instructions creating the svg file, creates a json file with the paths.
+    Reads the hemi.js, and from the instructions creating the svg file, creates a json file with the paths.
 
     There are the "enceinte", "bancs", "bancsdevant", "perchoir", "ministres" and "commissions" paths,
-    and either ints from 0 to (let's say) 800, or "s0" to "s800".
+    and ints from 0 to about 650 (with discontinuities).
     The exact number of integer seats is not documented.
     """
     if f is None:
         with open("./hemi.js", "r") as f:
             return create_json(f, write=write)
 
-    js = f.read()
+    if isinstance(f, str):
+        js = f
+    else:
+        js = f.read()
 
     db = {}
 
@@ -191,7 +194,7 @@ if __name__ == "__main__":
     except Exception:
         pass
     else:
-        paths = json.loads(create_json(StringIO(_r.text), write=False))
+        paths = json.loads(create_json(_r.text, write=False))
 
 if paths is None:
     # import the paths from the json file
