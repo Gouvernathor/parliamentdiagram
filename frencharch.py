@@ -14,7 +14,6 @@ from color import Color
 constant_styles = dict( # the original ones from assnat
     enceinte="fill:#9c9c9c;stroke:#fff;stroke-width:0.3;stroke-linejoin:round;",
     bancs="fill:#fff;stroke:#cbcbcb;stroke-width:0.8;stroke-linejoin:round;",
-    # bancsdevant=bancs,
     perchoir="fill:#fff;stroke:#cbcbcb;stroke-width:0.4;stroke-linejoin:round;",
     ministres="fill:#003c68;stroke:#fff;stroke-width:0.3;stroke-linejoin:round;",
     commissions="fill:#3b88b2;stroke:#fff;stroke-width:0.3;stroke-linejoin:round;",
@@ -28,7 +27,7 @@ def build_svg():
     """
     Returns an svg xml node.
     """
-    groups = tuple(number_to_group.values())
+    groups = sorted(set(number_to_group.values()))
 
     svg = ET.Element('svg',
         xmlns="http://www.w3.org/2000/svg",
@@ -43,15 +42,13 @@ def build_svg():
     # style definition
     style = [""]
     # fixed elements of the decor
-    style.extend("".join(".", name, "{", st, "}") for name, st in constant_styles.items())
+    style.extend("."+name+"{"+st+"}" for name, st in constant_styles.items())
     # groups
     for k, g in enumerate(groups):
         color = group_color(g)
         style.append(f".grp{k}{{fill:{color.hex};stroke:#2D2D2D;stroke-width:0.3;stroke-linejoin:round;}}")
     # assembling
-    style_element = ET.Element("style",
-        type="text/css",
-    )
+    style_element = ET.Element("style", type="text/css")
     style_element.text = "\n\t".join(style)+"\n"
     svg.append(style_element)
 
