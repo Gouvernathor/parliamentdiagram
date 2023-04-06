@@ -276,7 +276,7 @@ def title_from_properties(props):
     return rv
 
 # funny but unused
-def get_group_to_numbers():
+def group_to_numbers():
     datadiv = get_datadiv()
     group_to_numbers = defaultdict(set)
     for dl in datadiv:
