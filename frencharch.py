@@ -266,11 +266,7 @@ except Exception:
     pass
 
 def title_from_properties(props):
-    civ = props["civ"]
-    nom = props["nom"]
-    if None in (civ, nom):
-        return None
-    rv = f"{civ} {nom}"
+    rv = props["nom"]
 
     dept = props["dept"]
     circo = props["circo"]
