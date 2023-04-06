@@ -163,7 +163,7 @@ def create_json(f=None, write=True):
     The exact number of integer seats is not documented.
     """
     if f is None:
-        with open("./hemi.js", "r") as f:
+        with open("./frencharch_workspace/hemi.js", "r") as f:
             return create_json(f, write=write)
 
     if isinstance(f, str):
@@ -184,7 +184,7 @@ def create_json(f=None, write=True):
         db[match.group(1)] = match.group(2)
 
     if write:
-        with open("./french_hemi.json", "w") as _f:
+        with open("./frencharch_workspace/french_hemi.json", "w") as _f:
             json.dump(db, _f, indent=4)
     else:
         return json.dumps(db, indent=4)
@@ -205,7 +205,7 @@ if __name__ == "__main__":
 
 if paths is None:
     # import the paths from the json file
-    with open("./french_hemi.json", "r") as _f:
+    with open("./frencharch_workspace/french_hemi.json", "r") as _f:
         paths = json.load(_f)
 
 
@@ -218,11 +218,11 @@ def get_datadiv():
     """
     r = requests.get("https://www2.assemblee-nationale.fr/deputes/hemicycle")
 
-    # with open("./hemicycle.html", "wb") as f:
+    # with open("./frencharch_workspace/hemicycle.html", "wb") as f:
     #     f.write(r.content)
 
     # doesn't work, because the html is not well-formed xml because of the <script> tag
-    # tree = ET.parse("./hemicycle.html")
+    # tree = ET.parse("./frencharch_workspace/hemicycle.html")
     # tree = ET.fromstring(r.content)
 
     # didn't work either for some reason
@@ -297,7 +297,7 @@ def get_group_to_numbers():
 
 def main():
     tree = ET.ElementTree(build_svg())
-    with open("./frencharch.svg", "wb") as f:
+    with open("./frencharch_workspace/frencharch.svg", "wb") as f:
         tree.write(f, encoding="utf-8", xml_declaration=True)
 
 if __name__ == "__main__":
