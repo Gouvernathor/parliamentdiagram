@@ -276,7 +276,7 @@ def title_from_properties(props):
     circo = props["circo"]
     if None in (dept, circo):
         return rv
-    rv += f"\n {circo}e circo. {dept}"
+    rv += f"\n{circo}e circo. {dept}"
     return rv
 
 # funny but unused
