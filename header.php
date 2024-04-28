@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
-    <?php if (!isset("title")) {
+    <?php if (!isset($title)) {
         $title = "Parliament diagram generator";
     } ?>
     <title><?php echo $title; ?></title>
