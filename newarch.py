@@ -15,9 +15,8 @@ def main(**inputlist):
     will hence be sent to the web interface.
     """
     start_time = datetime.datetime.utcnow().strftime("%Y-%m-%d-%H-%M-%S-%f")
-    form = cgi.FieldStorage()
-    data = form.getvalue("data", "")
     if not inputlist:
+        data = cgi.FieldStorage().getvalue("data", "")
         inputlist = json.loads(data)
     else:
         data = json.dumps(inputlist)
